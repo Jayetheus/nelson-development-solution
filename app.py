@@ -7,12 +7,14 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this_is_my_secret_key'
 
 
-@app.route("/api/process_word", methods=['POST'])
+@app.route("/api/process-word", methods=['POST'])
 def process_word():
     data = request.get_json()
-    word = data.data
+    word = data["data"]
 
     letters = [letter for letter in word]
     letters.sort(key=None)
-    
+
     return jsonify({"word" : letters})
+
+  
