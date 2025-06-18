@@ -21,7 +21,3 @@ def process_word():
     letters.sort(key=None)
 
     return jsonify({"word" : letters})
-
-  
-
-app.run(debug=True)
